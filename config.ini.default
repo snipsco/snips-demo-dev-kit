@@ -2,5 +2,7 @@
 mqtt_host=localhost
 mqtt_port=1883
 
-relay_gpio=12
+site_id=snips-base
+
+relay_gpio_bcm=12
 temperature_unit=celsius
