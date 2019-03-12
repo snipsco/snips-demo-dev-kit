@@ -2,7 +2,9 @@
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/LICENSE)
 
-Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html). 
+Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html).
+
+This action code is composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-relay-switch/) and [snips-app-sht31](https://github.com/snipsco/snips-app-sht31/), enables you to control the connected relay module and fetch the indoor environment informations.
 
 ## Usage
 
@@ -33,6 +35,9 @@ Official action code for [Snips Voice Interaction Development Kit](https://www.s
 5. (On Pi) Add permission to `_snips-skill` user to access gpio: `sudo usermod -a -G i2c,spi,gpio,audio _snips-skills`
 6. (On Pi) Restart snips-skill-server: `sudo systemctl restart snips-skill-server`
 7. Have fun ***;-)***
+
+## Configurations
+
 
 ## Contributing
 

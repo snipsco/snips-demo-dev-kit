@@ -1,0 +1,4 @@
+*.pyc
+config.ini
+.ftpconfig
+.ftpignore
