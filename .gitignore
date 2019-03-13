@@ -2,3 +2,4 @@
 config.ini
 .ftpconfig
 .ftpignore
+venv/
