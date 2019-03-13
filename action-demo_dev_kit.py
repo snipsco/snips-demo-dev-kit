@@ -6,6 +6,8 @@ from RelaySwitch import RelaySwitch
 from SHT31 import SHT31
 from SnipsClients import SnipsMPU
 
+VERSION = 0.2.0
+
 CONFIG_INI = 'config.ini'
 
 config = SnipsConfigParser.read_configuration_file(CONFIG_INI).get('global')

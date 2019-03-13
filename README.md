@@ -1,10 +1,11 @@
-# snips-demo-dev-kit
+<img align="right" src="docs/devKit.png" width="150">
 
+[![Version](https://img.shields.io/badge/snips--demo--dev--kit-v0.2.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/LICENSE)
 
-Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html).
+## snips-demo-dev-kit
 
-This action code is composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-relay-switch/) and [snips-app-sht31](https://github.com/snipsco/snips-app-sht31/), enables you to control the connected relay module and fetch the indoor environment informations.
+Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html). It's composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-relay-switch/) and [snips-app-sht31](https://github.com/snipsco/snips-app-sht31/), enables you to control the connected relay module and fetch the indoor environment informations.
 
 ## Usage
 
@@ -12,21 +13,25 @@ This action code is composed of [snips-app-relay-switch](https://github.com/snip
 
 ***```"Hey snips, please turn on my light"```***
 
-***```"Relay has been turned on"```***
-
 #### :snowman: Asking for temperature
 
 ***```"Hey snips, please tell me the current temperature?"```***
-
-***```"The current temperature is 24.4 degree."```***
 
 #### :bamboo: Asking for humidity
 
 ***```"Hey snips, what's the humidity in the room?"```***
 
-***```"The current humidity is 53.25% "```***
+## Installation
 
-# Installation
+### Pre-required
+
+Please make sure that `_snips-skills` user has permission to access `gpio` and `i2c`.
+
+To grant this permission, run the following command **on Raspberry Pi**:
+
+```
+sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
+```
 
 ### With assistant (Recommend)
 
@@ -36,51 +41,35 @@ This action code is composed of [snips-app-relay-switch](https://github.com/snip
     <img src="docs/register.png" height="350">
 </p>
 
-2. Create an assistant in **[Snips console](https://console.snips.ai/)**
+2. Create an assistant in **[Snips Console](https://console.snips.ai/)**
 
 <p align="center">
     <img src="docs/createAssistant.png" height="350">
 </p>
 
-3. Add `Voice Interaction Dev Kit` APP **Snips - Dev Kit** to your assistant
+3. Add **Voice Interaction Dev Kit** App to your assistant
 
 <p align="center">
     <img src="docs/addApp.png" height="350">
 </p>
 
-4. Deploy assistant by **[Sam](https://snips.gitbook.io/documentation/console/deploy-your-assistant)**
+4. Deploy assistant by executing the provided command **On your laptop**
 
 <p align="center">
     <img src="docs/deployAssistant.png" height="350">
 </p>
 
-5. Grant `_snips-skill` user permission to access `GPIO` and `I2C` **(On Raspberry Pi)**
-
-```
-sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
-```
-
-6. Restart `snips-skill-server` **(On Raspberry Pi)**
-
-```
-sudo systemctl restart snips-skill-server
-```
-
-7. Start playing **:rocket:**
+5. Start playing **:rocket:**
 
 ### Only action code
 
-1. Fetch action code **(On your laptop)**
+1. Fetch action code **on your laptop**
 
 ```
 sam install actions -g https://github.com/snipsco/snips-demo-dev-kit.git
 ```
 
-2. Grant `i2c` and `gpio` accessing to `_snips-skill` **(On Raspberry Pi)**
-
-```
-sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
-```
+2. Start playing **:rocket:**
 
 ## Configurations
 
@@ -92,7 +81,7 @@ sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
 | `mqtt_port` | MQTT port number | `<mqtt port>` | `1883` |
 | `site_id` | Snips device ID | Refering to the actual `snips.toml` | `snips-base` |
 
- ##### :bangbang: ***To make satellite work correctly, please change here***
+##### :bangbang: ***If this skill is installed on a satellite device, please change the `site_id` to the one set for satellite, and change `mqtt_host` connecting to master devices***
 
 ### Relay GPIO pin
 
