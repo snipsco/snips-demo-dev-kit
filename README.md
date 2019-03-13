@@ -5,7 +5,9 @@
 
 ## snips-demo-dev-kit
 
-Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html). It's composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-relay-switch/) and [snips-app-sht31](https://github.com/snipsco/snips-app-sht31/), enables you to control the connected relay module and fetch the indoor environment informations.
+Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html). 
+
+It's composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-relay-switch/) and [snips-app-sht31](https://github.com/snipsco/snips-app-sht31/), enables you to control the connected relay module and fetch the indoor environment informations.
 
 ## Usage
 
