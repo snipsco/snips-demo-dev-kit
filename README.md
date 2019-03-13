@@ -12,7 +12,7 @@ This action code is composed of [snips-app-relay-switch](https://github.com/snip
 
 ***```"Hey snips, please turn on my light"```***
 
-***```"Sure, it's done"```***
+***```"Relay has been turned on"```***
 
 #### :snowman: Asking for temperature
 
@@ -28,16 +28,83 @@ This action code is composed of [snips-app-relay-switch](https://github.com/snip
 
 # Installation
 
-1. Create a Snips account ***[here](https://console.snips.ai/?ref=Qr4Gq17mkPk)***
-2. Create an assistant in ***[Snips console](https://console.snips.ai/)***
-3. Add APP ***Snips - Dev Kit*** to your assistant
-4. Deploy assistant by ***[Sam](https://snips.gitbook.io/documentation/console/deploy-your-assistant)***
-5. (On Pi) Add permission to `_snips-skill` user to access gpio: `sudo usermod -a -G i2c,spi,gpio,audio _snips-skills`
-6. (On Pi) Restart snips-skill-server: `sudo systemctl restart snips-skill-server`
-7. Have fun ***;-)***
+### With assistant (Recommend)
+
+1. Create a Snips account **[here](https://console.snips.ai/signup)**
+
+<p align="center">
+    <img src="docs/register.png" height="350">
+</p>
+
+2. Create an assistant in **[Snips console](https://console.snips.ai/)**
+
+<p align="center">
+    <img src="docs/createAssistant.png" height="350">
+</p>
+
+3. Add `Voice Interaction Dev Kit` APP **Snips - Dev Kit** to your assistant
+
+<p align="center">
+    <img src="docs/addApp.png" height="350">
+</p>
+
+4. Deploy assistant by **[Sam](https://snips.gitbook.io/documentation/console/deploy-your-assistant)**
+
+<p align="center">
+    <img src="docs/deployAssistant.png" height="350">
+</p>
+
+5. Grant `_snips-skill` user permission to access `GPIO` and `I2C` **(On Raspberry Pi)**
+
+```
+sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
+```
+
+6. Restart `snips-skill-server` **(On Raspberry Pi)**
+
+```
+sudo systemctl restart snips-skill-server
+```
+
+7. Start playing **:rocket:**
+
+### Only action code
+
+1. Fetch action code **(On your laptop)**
+
+```
+sam install actions -g https://github.com/snipsco/snips-demo-dev-kit.git
+```
+
+2. Grant `i2c` and `gpio` accessing to `_snips-skill` **(On Raspberry Pi)**
+
+```
+sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
+```
 
 ## Configurations
 
+### Connection
+
+| Config | Description | Value | Default |
+| --- | --- | --- | --- |
+| `mqtt_host` | MQTT host name | `<ip address>`/`<hostname>` | `localhost` |
+| `mqtt_port` | MQTT port number | `<mqtt port>` | `1883` |
+| `site_id` | Snips device ID | Refering to the actual `snips.toml` | `snips-base` |
+
+ ##### :bangbang: ***To make satellite work correctly, please change here***
+
+### Relay GPIO pin
+
+| Config | Description | Value | Default |
+| --- | --- | --- | --- |
+| `relay_gpio_bcm` | The BCM GPIO number | [Available BCM pin number](https://www.raspberrypi.org/documentation/usage/gpio/README.md) | `12` |
+
+### Temperature Unit
+
+| Config | Description | Value | Default |
+| --- | --- | --- | --- |
+| `temperature_unit` | The unit applied to temperature | `celsius`, `fahrenheit` | `celsius` |
 
 ## Contributing
 
