@@ -8,11 +8,10 @@ from hermes_python.ontology import *
 
 class SnipsMPU(object):
     def __init__(self, mqtt_addr, site_id, relay, sht31):
-        self.THRESHOLD_INTENT_CONFCORE_DROP = 0.3
-        self.THRESHOLD_INTENT_CONFCORE_TAKE = 0.6
-        self.THRESHOLD_SLTO_CONFCORE_TAKE = 0.5
+        self.THRESHOLD_INTENT_CONFSCORE_DROP = 0.3
+        self.THRESHOLD_INTENT_CONFSCORE_TAKE = 0.6
 
-        self.__sitd_id = site_id
+        self.__site_id = site_id
         self.__relay = relay
         self.__sht31 = sht31
 
@@ -21,7 +20,7 @@ class SnipsMPU(object):
     def check_site_id(handler):
         @functools.wraps(handler)
         def wrapper(self, hermes, intent_message):
-            if intent_message.site_id != self.__sitd_id:
+            if intent_message.site_id != self.__site_id:
                 return None
             else:
                 return handler(self, hermes, intent_message)
@@ -32,10 +31,10 @@ class SnipsMPU(object):
         def wrapper(self, hermes, intent_message):
             if handler is None:
                 return None
-            if intent_message.intent.confidence_score < self.THRESHOLD_INTENT_CONFCORE_DROP:
+            if intent_message.intent.confidence_score < self.THRESHOLD_INTENT_CONFSCORE_DROP:
                 hermes.publish_end_session(intent_message.session_id, '')
                 return None
-            elif intent_message.intent.confidence_score <= self.THRESHOLD_INTENT_CONFCORE_TAKE:
+            elif intent_message.intent.confidence_score <= self.THRESHOLD_INTENT_CONFSCORE_TAKE:
                 hermes.publish_end_session(intent_message.session_id, 'Sorry, I dont think I understood')
                 return None
             return handler(self, hermes, intent_message)
