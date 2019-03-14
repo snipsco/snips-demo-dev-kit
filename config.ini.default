@@ -1,8 +1,6 @@
 [global]
 mqtt_host=localhost
 mqtt_port=1883
-
-site_id=snips-base
-
+site_id=default
 relay_gpio_bcm=12
 temperature_unit=celsius
