@@ -31,4 +31,3 @@ class SnipsConfigParser(configparser.ConfigParser):
         except (IOError, configparser.Error) as e:
             print(e)
             return False
-
