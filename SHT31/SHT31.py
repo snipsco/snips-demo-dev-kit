@@ -45,4 +45,4 @@ class SHT31(object):
         return humidity
 
     def get_humidity_string(self):
-        return '{}%'.format(self.get_humidity())
+        return '{}'.format(self.get_humidity())
