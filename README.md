@@ -51,6 +51,10 @@ sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
 
 3. Add **Voice Interaction Dev Kit** App to your assistant
 
+- **[English App](https://console.snips.ai/store/en/skill_327kQdNonx85) :us:**
+- **[French App](https://console.snips.ai/store/fr/skill_m6Aoky9NQ5w) :fr:**
+- **[Japanese App](https://console.snips.ai/store/ja/skill_gyP2M63X74o) :jp:**
+
 <p align="center">
     <img src="docs/addApp.png" height="350">
 </p>
