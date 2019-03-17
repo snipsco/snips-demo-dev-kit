@@ -1,6 +1,6 @@
 <img align="right" src="docs/devKit.png" width="150">
 
-[![Version](https://img.shields.io/badge/snips--demo--dev--kit-v0.2.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
+[![Version](https://img.shields.io/badge/snips--demo--dev--kit-v0.3.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/LICENSE)
 
 ## snips-demo-dev-kit

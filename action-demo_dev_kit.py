@@ -6,7 +6,7 @@ from RelaySwitch import RelaySwitch
 from SHT31 import SHT31
 from SnipsClients import SnipsMPU
 
-VERSION = '0.2.0'
+VERSION = '0.3.0'
 
 CONFIG_INI = 'config.ini'
 I18N_DIR = 'assets/i18n'
