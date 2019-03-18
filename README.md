@@ -1,7 +1,7 @@
 <img align="right" src="docs/devKit.png" width="150">
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
+[![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
 
 # snips-demo-dev-kit
 
@@ -75,11 +75,9 @@ sudo apt-get install snips-skill-server
     <img src="docs/deployAssistant.png" height="350">
 </p>
 
-5. Start playing **:rocket:**
-
 ### Only action code
 
-Using sam to fetch the content of this repo **on your laptop**
+Using `sam` to fetch the content of this repo **on your laptop**
 
 ```bash
 sam install actions -g https://github.com/snipsco/snips-demo-dev-kit.git
@@ -129,6 +127,8 @@ source venv/bin/activate
 | Config | Description | Value | Default |
 | --- | --- | --- | --- |
 | `locale` | The tts language | `en_US`, `fr_FR` | `en_US` |
+
+> *NOTE: Japanese text-to-speech is not yet supported, which means that adding Japanese translation will block `snips-tts` software*
 
 ### Relay GPIO pin
 
