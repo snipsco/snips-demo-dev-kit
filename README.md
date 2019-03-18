@@ -1,9 +1,9 @@
 <img align="right" src="docs/devKit.png" width="150">
 
-[![Version](https://img.shields.io/badge/snips--demo--dev--kit-v0.3.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](https://github.com/snipsco/snips-demo-dev-kit/blob/master/)
 
-## snips-demo-dev-kit
+# snips-demo-dev-kit
 
 Official action code for [Snips Voice Interaction Development Kit](https://www.seeedstudio.com/snips.html).
 
@@ -14,6 +14,8 @@ It's composed of [snips-app-relay-switch](https://github.com/snipsco/snips-app-r
 #### :bulb: Controlling a connected device
 
 ***```"Hey snips, please turn on my light"```***
+
+***```"Hey snips, please turn off my light"```***
 
 #### :snowman: Asking for temperature
 
@@ -31,11 +33,19 @@ Please make sure that `_snips-skills` user has permission to access `gpio` and `
 
 To grant this permission, run the following command **on Raspberry Pi**:
 
-```
+```bash
 sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
 ```
 
-### With assistant (Recommend)
+If install to a satellite device, please make sure it has `snips-skill-server` installed first.
+
+To install `snips-skill-server`:
+
+```bash
+sudo apt-get install snips-skill-server
+```
+
+### With Assistant (Recommend)
 
 1. Create a Snips account **[here](https://console.snips.ai/signup)**
 
@@ -59,7 +69,7 @@ sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
     <img src="docs/addApp.png" height="350">
 </p>
 
-4. Deploy assistant by executing the provided command **On your laptop**
+4. Deploy assistant by executing the provided command **on your laptop**
 
 <p align="center">
     <img src="docs/deployAssistant.png" height="350">
@@ -69,13 +79,38 @@ sudo usermod -a -G i2c,spi,gpio,audio _snips-skills
 
 ### Only action code
 
-1. Fetch action code **on your laptop**
+Using sam to fetch the content of this repo **on your laptop**
 
-```
+```bash
 sam install actions -g https://github.com/snipsco/snips-demo-dev-kit.git
 ```
 
-2. Start playing **:rocket:**
+### Manually
+
+1. Clone the content of this repo to local:
+
+```bash
+git clone https://github.com/snipsco/snips-demo-dev-kit.git
+```
+
+2. Run `setup.sh` to install:
+
+```bash
+cd snips-demo-dev-kit/
+./setup.sh
+```
+
+3. Activate virtual environment:
+
+```bash
+source venv/bin/activate
+```
+
+4. Run the action code:
+
+```
+./action-demo_dev_kit.py
+```
 
 ## Configurations
 
