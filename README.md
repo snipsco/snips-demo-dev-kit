@@ -61,6 +61,10 @@ sudo apt-get install snips-skill-server
 
 3. Add **Voice Interaction Dev Kit** App to your assistant
 
+- **[English App](https://console.snips.ai/store/en/skill_327kQdNonx85) :us:**
+- **[French App](https://console.snips.ai/store/fr/skill_m6Aoky9NQ5w) :fr:**
+- **[Japanese App](https://console.snips.ai/store/ja/skill_gyP2M63X74o) :jp:**
+
 <p align="center">
     <img src="docs/addApp.png" height="350">
 </p>
@@ -119,6 +123,12 @@ source venv/bin/activate
 | `site_id` | Snips device ID | Refering to the actual `snips.toml` | `default` |
 
 ##### :bangbang: ***If this skill is installed on a satellite device, please change the `site_id` to the one set for satellite, and change `mqtt_host` connecting to master device.***
+
+### TTS language
+
+| Config | Description | Value | Default |
+| --- | --- | --- | --- |
+| `locale` | The tts language | `en_US`, `fr_FR` | `en_US` |
 
 ### Relay GPIO pin
 
